@@ -1,3 +1,2 @@
-# hw04-code-quiz
-
+# JavaScript Code Quiz! 
 
