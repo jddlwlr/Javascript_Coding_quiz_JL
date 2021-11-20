@@ -1,0 +1,109 @@
+:root {
+    background-color: rgb(29, 26, 26);
+   
+    
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  
+  }
+  
+  h1 {
+    font-size: 50%;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  body {
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+  }
+  .container {
+    width: 60%;
+    height: 60%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    background: gray;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #startButton {
+    display: block;
+    font-size: 25px;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgb(60, 36, 36);
+    background: linear-gradient(
+      90deg,
+      rgb(26, 51, 106) 0%,
+      rgb(0, 10, 255) 100%
+    );
+    border-radius: 4px;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(8, 114, 244, 0.6);
+  }
+  
+  .btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  
+  #highscore-btn {
+
+    background: linear-gradient(90deg, reg(18, 92, 255) 0%, rgb(0, 10, 255) 100%);
+  }
+  
+  #highscore-btn:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 0, 0.5);
+  }
+  
+  #question {
+    font-size: 16px;
+    display: row;
+    padding: 5px 0;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 16px;
+    color: rgb(162, 61, 61);
+    background: linear-gradient(
+      90deg,
+      rgb(166, 177, 200) 0%,
+      rgb(0, 10, 255) 100%
+    );
+    border-radius: 4px;
+  }
+  .answers {
+    font-size: 16px;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 16px;
+    color: rgb(162, 61, 61);
+    background: linear-gradient(
+      90deg,
+      rgb(166, 177, 200) 0%,
+      rgb(0, 10, 255) 100%);
+    border-radius: 4px;
+  }
+  
