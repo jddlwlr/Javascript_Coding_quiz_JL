@@ -123,7 +123,7 @@ function next() {
   
     }
 }
-// deducts time if the incorrect answer is selected
+
 function wrong() {
   timeLeft -= 15; 
   next();

@@ -1,7 +1,7 @@
 # JavaScript Code Quiz! 
  https://jddlwlr.github.io/Javascript_Coding_quiz_JL/
 
- ![basic depiction of webpage](assets\SiteImage.jpg "check it out!").
+ ![basic depiction of webpage](.\assets\SiteImage.jpg "check it out!").
 
 ## Description
 
