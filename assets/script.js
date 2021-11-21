@@ -40,23 +40,21 @@ function startTimer(){
               $(startBtn).show();
               $(startBtn).text("Try Again?") 
               // endGame ();
-    
-              return;
-    
-          }else{
+          }
+          else{
             $(timerEl).text(counter);
           }
     
       }, 1000);
 };
-
+//use forEach in here
 function nextQuestion () {
-  var currentIndex = index++;
-    $(questionEl).text(questions[0].question)
+  var i = -1;
+    $(questionEl).text(questions[i++].question)
     
     choicesEl.each(function (){
-      var i = -1;
-      $(choicesEl).text(questions[0].choices[i++])
+     
+      $(choicesEl).text(questions[i++].choices)
 
     });
 
@@ -64,3 +62,27 @@ function nextQuestion () {
 // need to have the function inside the event listenr
 
 $choices.click(compare()) 
+
+// if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+//   localStorage.setItem("mostRecentScore", score);
+
+//   return window.location.assign("./end.html");
+// }
+
+// questionCounter++;
+// progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+// progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+
+// const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+// currentQuestion = availableQuestions[questionsIndex];
+// question.innerText = currentQuestion.question;
+
+// choices.forEach((choice) => {
+//   const number = choice.dataset["number"];
+//   choice.innerText = currentQuestion["choice" + number];
+// });
+
+// availableQuestions.splice(questionsIndex, 1);
+
+// acceptingAnswers = true;
+// };
