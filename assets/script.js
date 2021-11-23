@@ -1,8 +1,10 @@
 // // Targeting html elements
 var startBtn = $('#startButton');
 var timerEl = $('#timerDisp')
-
+var score = 0;
 var timeLeft = 0;
+var scoreEl = $('#scoreEl')
+
 $('#name').hide();
 $('.btn').hide();
 
@@ -10,18 +12,18 @@ $('.btn').hide();
 var questions = [
   {
     question: "What does a function do?",
-    choices: ["Addition", "subtraction", "Anything you need it to", "all of the above"],
+    options: ["Addition", "subtraction", "Anything you need it to", "all of the above"],
     correct: "all of the above"
   },
   {
     question: "Is jquery better than vanilla javascript",
-    choices: ["yes", "no", "maybe", "depends who you ask",],
-    correct: "A vegetable"
+    options: ["yes", "no", "maybe", "depends who you ask",],
+    correct: "depends who you ask"
   },
   {
     question: "The setItem takes what two inputs?",
-    choices: ["KeyName and KeyValue", "Null and Void", "Boolean and Null", "depends who you ask",],
-    correct: "A vegetable"
+    options: ["KeyName and KeyValue", "Null and Void", "Boolean and Null", "depends who you ask",],
+    correct: "KeyName and KeyValue"
   },
 ]
 
@@ -101,38 +103,107 @@ function next() {
     }
 
 
-    for (var choices = 0; choices < questions[currentQuestion].choices.length; choices++) {
+    for (var i = 0; i < questions[currentQuestion].options.length; i++) {
   
-        $('#answer1').text(questions[currentQuestion].choices[choices++]);
-        $('#answer2').text(questions[currentQuestion].choices[choices++]);
-        $('#answer3').text(questions[currentQuestion].choices[choices++]);
-        $('#answer4').text(questions[currentQuestion].choices[choices++]);
+        $('#answer1').text(questions[currentQuestion].options[i++]);
+        $('#answer2').text(questions[currentQuestion].options[i++]);
+        $('#answer3').text(questions[currentQuestion].options[i++]);
+        $('#answer4').text(questions[currentQuestion].options[i++]);
 
-        $(timerEl).text(questions[currentQuestion].question);
+        $('#questionEl').text(questions[currentQuestion].question);
         
-        var selection = $('.btn').on('click', function(){
-          return $('.btn').value
-          console.log(selection())
-        })
-
-        if (questions[currentQuestion].choices[choices] == questions[currentQuestion].correct[choices]) {
-            right ();
-        } else {
-            wrong ();
-        }
-  
     }
-}
+};
+
+var currentQuestion = -1;
+var answer1Val = '';
+
+// event listener q 1 
+$('#answer1').click((function (event) {
+  event.preventDefault();
+  var el = event.target;
+  if (el.matches("#answer1") === true) {
+
+    var chosenAnswer = 0;
+    
+    checkAnswer();
+  }
+
+  answer1Val = questions[currentQuestion].options[chosenAnswer];
+  console.log(answer1Val);
+}));
+
+// event listener q2
+$('#answer2').click((function (event) {
+  event.preventDefault();
+  var el = event.target;
+  if (el.matches("#answer2") === true) {
+
+    var chosenAnswer = 1;
+    
+    checkAnswer();
+  }
+
+  answer1Val = questions[currentQuestion].options[chosenAnswer];
+  console.log(answer1Val);
+}));
+
+// event listener a3
+$('#answer3').click((function (event) {
+  event.preventDefault();
+  var el = event.target;
+  if (el.matches("#answer3") === true) {
+
+    var chosenAnswer = 2;
+    
+    checkAnswer();
+  }
+
+  answer1Val = questions[currentQuestion].options[chosenAnswer];
+  console.log(answer1Val);
+}));
+
+//event listener a4
+$('#answer4').click((function (event) {
+  event.preventDefault();
+  var el = event.target;
+  if (el.matches("#answer4") === true) {
+
+    var chosenAnswer = 3;
+    
+    checkAnswer();
+  }
+
+  answer1Val = questions[currentQuestion].options[chosenAnswer];
+  console.log(answer1Val);
+}));
+
+// Answer Checker 
+function checkAnswer (){
+ if (answer1Val == questions[currentQuestion].correct) {
+   score += 100;
+   console.log('correct answser!')
+ }
+   else {
+     timeLeft -= 5;
+     console.log("incorrect answer") 
+ }
+ $(scoreEl).text(score);
+
+};
+
+
+
+
+
 
 function wrong() {
   timeLeft -= 15; 
-  next();
-}
+  // next();
+};
 
 // adds 100 to the score if the correct answer is selected
 function right() {
   score += 100;
-  next();
-}
-var currentQuestion = -1;
-
+  // next();
+};

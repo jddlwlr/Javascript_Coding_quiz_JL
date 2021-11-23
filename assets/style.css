@@ -14,7 +14,7 @@
   }
   
   h1 {
-    font-size: 50%;
+    font-size: 32px;
     color: #fff;
     margin-bottom: 10px;
   }
@@ -85,4 +85,7 @@
       rgb(0, 10, 255) 100%);
     border-radius: 4px;
   }
+
+  #timerDisp
+  font-size: 25px;
   
